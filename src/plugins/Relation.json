@@ -1,0 +1,42 @@
+[
+    {
+        "id":"001",
+        "lable": "儿子",
+        "value": "Son"
+    },
+    {
+        "id":"002",
+        "lable": "女儿",
+        "value": "Daughter"
+    },
+    {
+        "id":"003",
+        "lable": "爸爸",
+        "value": "Father"
+    },
+    {
+        "id":"004",
+        "lable": "妈妈",
+        "value": "Mother"
+    },
+    {
+        "id":"005",
+        "lable": "爷爷",
+        "value": "grandpa"
+    },
+    {
+        "id":"006",
+        "lable": "奶奶",
+        "value": "grandma"
+    },
+    {
+        "id":"007",
+        "lable": "哥哥",
+        "value": "elderbrother"
+    },
+    {
+        "id":"008",
+        "lable": "姐姐",
+        "value": "eldersister"
+    }
+]
