@@ -62,6 +62,7 @@ export default {
             this.$refs.container.classList.remove('right-panel-active')
         },
         login() {
+            const token = "abc"
             const loading = this.$loading({
                 lock: true,
                 text: 'Loging........................',
@@ -73,7 +74,8 @@ export default {
                 this.$router.push({
                     name: 'home'
                 })
-            }, 1500)
+            }, 1000)
+            localStorage.setItem("token",token)
         }
     }
 }
