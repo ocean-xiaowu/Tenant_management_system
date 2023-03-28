@@ -12,7 +12,6 @@ export default {
             if (this.$listeners.click) {
                 this.$listeners.click = this.throat('click')
             }
-            debugger
             return this.$listeners
         },
         disabled() {
@@ -32,7 +31,6 @@ export default {
         throat(method) {
             const me = this
             return (...args) => {
-                debugger
                 if (!me.timer) {
                     me.$emit(method, ...args)
                     me.timer = setTimeout(() => {
