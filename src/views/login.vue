@@ -62,7 +62,6 @@ export default {
             this.$refs.container.classList.remove('right-panel-active')
         },
         login() {
-            const token = "abc"
             const loading = this.$loading({
                 lock: true,
                 text: 'Loging........................',
@@ -75,7 +74,6 @@ export default {
                     name: 'home'
                 })
             }, 1000)
-            localStorage.setItem("token",token)
         }
     }
 }
