@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 const routes = [
   {
     path: '/',
@@ -124,6 +129,7 @@ const routers = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+// 路由守卫
 routers.beforeEach((to, from, next) => {
   // 检查用户是否已登录
   const loggedIn = localStorage.getItem('user')

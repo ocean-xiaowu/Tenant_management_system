@@ -379,16 +379,22 @@ export default {
     margin-left: 5px;
 }
 .headerMessage {
-    flex: 3;
+    font-size: 0.8rem;
+    display: flex;
+    flex: 2;
+    justify-content: center; /* 主轴居中 */
+    align-items: center; /* 侧轴居中 */
 }
 .home-header {
     display: flex;
 }
 .headerLeft {
-    flex: 4;
+    flex: 3;
 }
 .headerUser {
     display: flex;
+    justify-content: center; /* 主轴居中 */
+    align-items: center; /* 侧轴居中 */
     flex: 1;
 }
 .UserPt {
