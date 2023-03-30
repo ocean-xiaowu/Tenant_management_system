@@ -73,7 +73,8 @@ export default {
                 this.$router.push({
                     name: 'home'
                 })
-            }, 1000)
+            }, 500)
+            localStorage.setItem("user","abc")
         }
     }
 }

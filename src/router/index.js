@@ -22,7 +22,8 @@ const routes = [
         name: 'users',
         component: () => import('@/views/users/user.vue'),
         meta: {
-          index: 1
+          index: 1,
+          requiresAuth: true
         }
       },
       {
@@ -62,7 +63,8 @@ const routes = [
         name: "homelist",
         component: () => import("@/views/homePage.vue"),
         meta: {
-          index: 6
+          index: 6,
+          requiresAuth: true
         }
       },
       {
@@ -94,7 +96,7 @@ const routes = [
         name: "roomInformation",
         component: () => import("@/views/users/roomInformation.vue"),
         meta: {
-          index: 10
+          index: 10,
         }
       },
       {
@@ -121,5 +123,25 @@ const routers = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+routers.beforeEach((to, from, next) => {
+  // 检查用户是否已登录
+  const loggedIn = localStorage.getItem('user')
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // 如果需要登录，则检查登录状态
+    if (!loggedIn) {
+      // 如果用户未登录，则重定向到登录页
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      // 如果用户已登录，则放行
+      next()
+    }
+  } else {
+    // 如果不需要登录，则直接放行
+    next()
+  }
 })
 export default routers
